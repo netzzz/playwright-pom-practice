@@ -1,6 +1,6 @@
 Automation of different web elements and pages
 
-Written with TypeScript and Playwright, implements Page Object Model Pattern.
+Written with TypeScript and Playwright, implements Page Object Model design pattern.
 
 If you want to run tests locally, please follow these steps:
 -Clone this repository
