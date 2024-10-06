@@ -1,6 +1,6 @@
 import { expect, type Page } from '@playwright/test';
 
-export class fileUploadPage {
+export default class FileUploadPage {
     private readonly page: Page;
     filePath: string;
 

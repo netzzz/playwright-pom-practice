@@ -1,6 +1,6 @@
-import { loginErrorType } from '../../support/test-data/loginPageErrors.enum';
+import { LoginErrorType } from '../../support/test-data/loginPageErrors.enum';
 
-export class loginPageData {
+export class LoginPageData {
     private static validUsername: string = "student";
     private static validPassword: string = "Password123";
     private static invalidUsername: string = "invalidUser";
@@ -11,12 +11,12 @@ export class loginPageData {
         InvalidPassword : "Your password is invalid!"
     }
 
-    public static getValidUsername = () => loginPageData.validUsername;
-    public static getValidPassword = () => loginPageData.validPassword;
-    public static getInvalidUsername = () => loginPageData.invalidUsername;
-    public static getInvalidPassword = () => loginPageData.invalidPassword;
+    public static getValidUsername = () => LoginPageData.validUsername;
+    public static getValidPassword = () => LoginPageData.validPassword;
+    public static getInvalidUsername = () => LoginPageData.invalidUsername;
+    public static getInvalidPassword = () => LoginPageData.invalidPassword;
 
-    public static getErrorMessage(errorType : loginErrorType): string{
-        return loginPageData.errorMessages[errorType];
+    public static getErrorMessage(errorType : LoginErrorType): string{
+        return LoginPageData.errorMessages[errorType];
     }
 }

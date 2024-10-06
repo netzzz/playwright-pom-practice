@@ -1,14 +1,11 @@
-import { test } from '@playwright/test';
-import { checkboxPracticePage } from '../../support/pageobjectmodel/pages/checkbox.page';
+import { test } from '../../fixtures/basePage';
 
-test('working with checkboxes', async ({ page }) => {
-    const checkboxPage = new checkboxPracticePage(page);
-
-    await checkboxPage.goto();
-    await checkboxPage.expectCheckboxesToBeVisible();
-    await checkboxPage.checkCheckboxes();
-    await checkboxPage.expectCheckboxesToBeChecked();
-    await checkboxPage.uncheckCheckboxes();
-    await checkboxPage.expectCheckboxesToBeUnchecked();
-    await checkboxPage.closePage();
+test('working with checkboxes', async ({  checkboxPracticePage}) => {
+    await checkboxPracticePage.goto();
+    await checkboxPracticePage.expectCheckboxesToBeVisible();
+    await checkboxPracticePage.checkCheckboxes();
+    await checkboxPracticePage.expectCheckboxesToBeChecked();
+    await checkboxPracticePage.uncheckCheckboxes();
+    await checkboxPracticePage.expectCheckboxesToBeUnchecked();
+    await checkboxPracticePage.closePage();
 });

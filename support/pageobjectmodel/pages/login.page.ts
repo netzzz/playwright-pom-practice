@@ -1,8 +1,8 @@
 import { expect, type Page } from '@playwright/test';
-import { loginPageData } from '../../test-data/loginPage.data';
-import { loginErrorType } from '../../test-data/loginPageErrors.enum';
+import { LoginPageData } from '../../test-data/loginPage.data';
+import { LoginErrorType } from '../../test-data/loginPageErrors.enum';
 
-export class loginPracticePage {
+export default class LoginPracticePage {
     private readonly page: Page;
 
     constructor(page: Page){
@@ -38,7 +38,7 @@ export class loginPracticePage {
         await this.submitButton().click();
     }
 
-    public async checkErrorMessage(errorType : loginErrorType){
-        await expect(this.errorElement()).toHaveText(loginPageData.getErrorMessage(errorType));
+    public async checkErrorMessage(errorType : LoginErrorType){
+        await expect(this.errorElement()).toHaveText(LoginPageData.getErrorMessage(errorType));
     }
 }

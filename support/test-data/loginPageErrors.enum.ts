@@ -1,4 +1,4 @@
-export enum loginErrorType {
+export enum LoginErrorType {
     InvalidUsername = "InvalidUsername",
     InvalidPassword = "InvalidPassword"
 }

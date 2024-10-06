@@ -1,6 +1,6 @@
 import { expect, type Page } from '@playwright/test';
 
-export class checkboxPracticePage {
+export default class CheckboxPracticePage {
     private readonly page: Page;
 
     constructor(page: Page) {

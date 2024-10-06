@@ -1,6 +1,6 @@
 import { expect, type Page } from '@playwright/test';
 
-export class dropdownPracticePage {
+export default class DropdownPracticePage {
     private readonly page: Page;
 
     constructor(page: Page) {

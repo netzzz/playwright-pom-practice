@@ -1,11 +1,8 @@
-import { test } from '@playwright/test';
-import { fileUploadPage } from '../../support/pageobjectmodel/pages/fileUpload.page';
+import { test } from '../../fixtures/basePage';
 
-test('import image', async ({page}) => {
-    const pageFileUpload = new fileUploadPage(page);
-
-    await pageFileUpload.goto();
-    await pageFileUpload.uploadFile("support/images/image1.png");
-    await pageFileUpload.expectFilenameToBeVisible();
-    await pageFileUpload.closePage();
+test('import image', async ({fileUploadPage}) => {
+    await fileUploadPage.goto();
+    await fileUploadPage.uploadFile("support/images/image1.png");
+    await fileUploadPage.expectFilenameToBeVisible();
+    await fileUploadPage.closePage();
 })
