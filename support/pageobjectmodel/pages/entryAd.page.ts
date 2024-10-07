@@ -17,9 +17,9 @@ export default class EntryAdPage {
 
     // Locators
 
-    private adCloseButton = () => this.page.locator("div[class='modal-footer'] p");
-    private articleTitle = () => this.page.locator('text="Entry Ad"');
-    private reEnableAd = () => this.page.getByRole('link', { name: 'click here' });
+    adCloseButton = () => this.page.locator("div[class='modal-footer'] p");
+    articleTitle = () => this.page.locator('text="Entry Ad"');
+    reEnableAd = () => this.page.getByRole('link', { name: 'click here' });
 
     // Methods
 

@@ -9,7 +9,7 @@ export default class LoginLandingPage {
 
     // Locators
 
-    private successfulLoginMessage = () => this.page.getByText("Logged In Successfully")
+    successfulLoginMessage = () => this.page.getByText("Logged In Successfully")
 
     // Methods
 

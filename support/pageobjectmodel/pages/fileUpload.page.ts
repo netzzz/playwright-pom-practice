@@ -18,7 +18,7 @@ export default class FileUploadPage {
 
     // Locators
 
-    private uploadFileHandle = () => this.page.getByText("Select Image File");
+    uploadFileHandle = () => this.page.getByText("Select Image File");
 
     // Actions
 

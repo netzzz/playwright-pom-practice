@@ -17,8 +17,8 @@ export default class DropdownPracticePage {
 
     // Locators
 
-    private articleHeading = () => this.page.getByRole('heading', { name: 'Dropdown List' });
-    private dropdown = () => this.page.locator('#dropdown');
+    articleHeading = () => this.page.getByRole('heading', { name: 'Dropdown List' });
+    dropdown = () => this.page.locator('#dropdown');
     
     // Methods
 

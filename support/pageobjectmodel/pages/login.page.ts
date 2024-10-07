@@ -18,10 +18,10 @@ export default class LoginPracticePage {
 
     // Locators
 
-    private usernameInput = () => this.page.locator("#username");
-    private passwordInput = () => this.page.locator("#password");
-    private submitButton = () => this.page.locator("#submit");
-    private errorElement = () => this.page.locator("#error");
+    usernameInput = () => this.page.locator("#username");
+    passwordInput = () => this.page.locator("#password");
+    submitButton = () => this.page.locator("#submit");
+    errorElement = () => this.page.locator("#error");
 
     // Methods
 

@@ -17,8 +17,8 @@ export default class CheckboxPracticePage {
 
     // Locators
 
-    private checkboxesDiv = () => this.page.locator('#checkboxes');
-    private allCheckboxesElements = () => this.page.getByRole('checkbox').all();
+    checkboxesDiv = () => this.page.locator('#checkboxes');
+    allCheckboxesElements = () => this.page.getByRole('checkbox').all();
 
     // Methods
 
