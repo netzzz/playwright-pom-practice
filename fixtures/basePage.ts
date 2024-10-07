@@ -6,6 +6,7 @@ import FileUploadPage  from '../support/pageobjectmodel/pages/fileUpload.page';
 import LoginPracticePage  from '../support/pageobjectmodel/pages/login.page';
 import LoginLandingPage  from '../support/pageobjectmodel/pages/loginLanding.page';
 import DragAndDropPage  from '../support/pageobjectmodel/pages/dragAndDrop.page';
+import DownloadPage from '../support/pageobjectmodel/pages/download.page';
 
 export const test = base.extend<{
     checkboxPracticePage: CheckboxPracticePage;
@@ -15,6 +16,7 @@ export const test = base.extend<{
     loginPracticePage: LoginPracticePage;
     loginLandingPage: LoginLandingPage;
     dragAndDropPage: DragAndDropPage;
+    downloadPage: DownloadPage;
 }>({
     checkboxPracticePage: async ({page}, use) => {
         await use(new CheckboxPracticePage(page));
@@ -36,5 +38,8 @@ export const test = base.extend<{
     },
     dragAndDropPage: async ({page}, use) => {
         await use(new DragAndDropPage(page));
+    },
+    downloadPage: async ({page}, use) => {
+        await use(new DownloadPage(page));
     }
 })
