@@ -24,14 +24,4 @@ export default class DownloadPage {
     public async clickOnDownloadLink() {
         await this.downloadLink().click();
     }
-
-    public async getDownloadPath(download: Download): Promise<string> {
-        return await download.path();
-    }
-
-    public async expectDownloadPathToBeDefined(download: Download) {
-        expect(await this.getDownloadPath(download)).toBeDefined();
-    }
-
-
 }
