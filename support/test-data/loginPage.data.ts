@@ -1,10 +1,14 @@
-import { LoginErrorType } from '../../support/test-data/loginPageErrors.enum';
+export enum LoginErrorType {
+    InvalidUsername = "InvalidUsername",
+    InvalidPassword = "InvalidPassword"
+}
 
 export class LoginPageData {
     private static validUsername: string = "student";
     private static validPassword: string = "Password123";
     private static invalidUsername: string = "invalidUser";
     private static invalidPassword: string = "invalidPassword";
+
 
     private static errorMessages: { [key: string]: string } = {
         InvalidUsername : "Your username is invalid!",

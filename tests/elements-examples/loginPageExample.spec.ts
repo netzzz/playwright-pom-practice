@@ -1,7 +1,5 @@
 import { test } from '../../fixtures/basePage';
-import { LoginPageData } from '../../support/test-data/loginPage.data';
-import { LoginErrorType } from '../../support/test-data/loginPageErrors.enum';
-
+import { LoginPageData, LoginErrorType } from '../../support/test-data/loginPage.data';
 
 test.describe('login functionality test cases', () => {
     test.afterEach(async ({page}) => {

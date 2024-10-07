@@ -1,6 +1,5 @@
 import { expect, type Page } from '@playwright/test';
-import { LoginPageData } from '../../test-data/loginPage.data';
-import { LoginErrorType } from '../../test-data/loginPageErrors.enum';
+import { LoginPageData, LoginErrorType } from '../../test-data/loginPage.data';
 
 export default class LoginPracticePage {
     private readonly page: Page;
