@@ -9,6 +9,12 @@ test('Login -> Purchase -> Checkout', async ({page})=>{
     for(let product of products){
         await product.getByText("Add to cart").click();
     }
-    await page.locator("#shopping_cart_link").click();
-    await page.pause();
+    await page.locator(".shopping_cart_link").click();
+    await page.getByText("Checkout").click();
+    await page.getByPlaceholder("First Name").fill("John");
+    await page.getByPlaceholder("Last Name").fill("Doe");
+    await page.getByPlaceholder("Zip/Postal Code").fill("11000");
+    await page.getByText("Continue").click();
+    await page.getByText("Finish").click();
+    expect(await page.getByText("Thank you for your order!").isVisible());
 })
