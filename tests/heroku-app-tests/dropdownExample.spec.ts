@@ -1,4 +1,4 @@
-import { test } from '../../fixtures/basePage';
+import { test } from '../../fixtures/herokuAppBasePage';
 
 test("dropdown selection and assertion", async ({ dropdownPracticePage }) => {
     await dropdownPracticePage.goto();

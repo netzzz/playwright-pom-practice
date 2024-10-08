@@ -1,4 +1,4 @@
-import { test } from '../../fixtures/basePage';
+import { test } from '../../fixtures/herokuAppBasePage';
 
 test('close ad', async ({ entryAdPage }) => {
     await entryAdPage.goto();

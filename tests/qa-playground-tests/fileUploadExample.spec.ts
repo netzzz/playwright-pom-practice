@@ -1,4 +1,4 @@
-import { test } from '../../fixtures/basePage';
+import { test } from '../../fixtures/qaPlaygroundBasePage';
 
 test('import image', async ({fileUploadPage}) => {
     await fileUploadPage.goto();

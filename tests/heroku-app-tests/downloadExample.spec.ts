@@ -1,4 +1,4 @@
-import { test } from '../../fixtures/basePage';
+import { test } from '../../fixtures/herokuAppBasePage';
 
 test('check that download is successful', async ({ downloadPage }) => {
     await downloadPage.goto();

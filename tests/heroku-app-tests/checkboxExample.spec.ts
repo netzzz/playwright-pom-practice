@@ -1,4 +1,4 @@
-import { test } from '../../fixtures/basePage';
+import { test } from '../../fixtures/herokuAppBasePage';
 
 test('working with checkboxes', async ({  checkboxPracticePage}) => {
     await checkboxPracticePage.goto();

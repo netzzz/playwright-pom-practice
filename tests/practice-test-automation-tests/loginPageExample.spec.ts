@@ -1,4 +1,4 @@
-import { test } from '../../fixtures/basePage';
+import { test } from '../../fixtures/practiceTestAutomationBasePage';
 import { LoginPageData, LoginErrorType } from '../../support/test-data/loginPage.data';
 
 test.describe('login functionality test cases', () => {
