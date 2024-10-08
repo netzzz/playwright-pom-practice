@@ -1,4 +1,4 @@
-Automation of different web elements and pages  
+Automation of different web pages  
   
 Written with TypeScript and Playwright, implements Page Object Model design pattern.  
   
