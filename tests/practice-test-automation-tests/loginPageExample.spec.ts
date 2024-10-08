@@ -1,5 +1,5 @@
 import { test } from '../../fixtures/practiceTestAutomationBasePage';
-import { LoginPageData, LoginErrorType } from '../../support/test-data/loginPage.data';
+import { LoginPageData, LoginErrorType } from '../../support/test-data/practice-test-automation-test-data/loginPage.data';
 
 test.describe('login functionality test cases', () => {
     test.afterEach(async ({page}) => {
