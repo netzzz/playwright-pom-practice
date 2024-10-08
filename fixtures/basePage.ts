@@ -1,12 +1,12 @@
 import { test as base } from '@playwright/test';
-import CheckboxPracticePage  from '../support/pageobjectmodel/pages/checkbox.page';
-import DropdownPracticePage  from '../support/pageobjectmodel/pages/dropdown.page';
-import EntryAdPage  from '../support/pageobjectmodel/pages/entryAd.page';
-import FileUploadPage  from '../support/pageobjectmodel/pages/fileUpload.page';
-import LoginPracticePage  from '../support/pageobjectmodel/pages/login.page';
-import LoginLandingPage  from '../support/pageobjectmodel/pages/loginLanding.page';
-import DragAndDropPage  from '../support/pageobjectmodel/pages/dragAndDrop.page';
-import DownloadPage from '../support/pageobjectmodel/pages/download.page';
+import CheckboxPracticePage  from '../support/pageobjectmodel/pages/heroku-app-pages/checkbox.page';
+import DropdownPracticePage  from '../support/pageobjectmodel/pages/heroku-app-pages/dropdown.page';
+import EntryAdPage  from '../support/pageobjectmodel/pages/heroku-app-pages/entryAd.page';
+import FileUploadPage  from '../support/pageobjectmodel/pages/qa-playground-pages/fileUpload.page';
+import LoginPracticePage  from '../support/pageobjectmodel/pages/practice-test-automation-pages/login.page';
+import LoginLandingPage  from '../support/pageobjectmodel/pages/practice-test-automation-pages/loginLanding.page';
+import DragAndDropPage  from '../support/pageobjectmodel/pages/heroku-app-pages/dragAndDrop.page';
+import DownloadPage from '../support/pageobjectmodel/pages/heroku-app-pages/download.page';
 
 export const test = base.extend<{
     checkboxPracticePage: CheckboxPracticePage;
