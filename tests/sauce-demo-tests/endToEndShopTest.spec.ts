@@ -1,10 +1,12 @@
-import { test, expect } from '@playwright/test';
+import { expect } from '@playwright/test';
+import { test } from '../../fixtures/sauceDemoBasePage';
 
-test('Login -> Purchase -> Checkout', async ({page})=>{
-    await page.goto("https://www.saucedemo.com/");
-    await page.locator("#user-name").fill("standard_user");
-    await page.locator("#password").fill("secret_sauce");
-    await page.getByText("Login").click();
+test('Login -> Purchase -> Checkout', async ({page, loginPage})=>{
+    await loginPage.goto();
+    await loginPage.fillUsernameInput("standard_user");
+    await loginPage.fillPasswordInput("secret_sauce");
+    await loginPage.clickLoginButton();
+
     const products = await page.locator(".inventory_list > div").all();
     for(let product of products){
         await product.getByText("Add to cart").click();
