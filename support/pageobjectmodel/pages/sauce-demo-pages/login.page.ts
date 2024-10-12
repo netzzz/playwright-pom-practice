@@ -1,4 +1,5 @@
-import { type Page } from '@playwright/test';
+import { expect, type Page } from '@playwright/test';
+import { LoginPageData, LoginErrorType } from '../../../test-data/sauce-demo-test-data/loginPage.data';
 
 export default class LoginPage {
     private readonly page: Page;
@@ -16,6 +17,7 @@ export default class LoginPage {
     usernameInput = () => this.page.locator("#user-name");
     passwordInput = () => this.page.locator("#password");
     loginButton = () => this.page.getByText("Login");
+    errorMessageDiv = () => this.page.locator("div[class*='error-message-container']")
 
     // Methods
 
@@ -29,5 +31,9 @@ export default class LoginPage {
 
     public async clickLoginButton(){
         await this.loginButton().click();
+    }
+
+    public async checkErrorMessage(errorType : LoginErrorType){
+        await expect(this.errorMessageDiv()).toContainText(LoginPageData.getErrorMessage(errorType));
     }
 }

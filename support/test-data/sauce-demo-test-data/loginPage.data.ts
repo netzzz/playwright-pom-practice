@@ -1,6 +1,9 @@
 export enum LoginErrorType {
-    InvalidUsername = "InvalidUsername",
-    InvalidPassword = "InvalidPassword"
+    EmptyUsernameEmptyPassword = "EmptyUsernameEmptyPassword",
+    EmptyUsernameValidPassword = "EmptyUsernameValidPassword",
+    ValidUsernameEmptyPassword = "ValidUsernameEmptyPassword",
+    ValidUsernameInvalidPassword = "ValidUsernameInvalidPassword",
+    InvalidUsernameValidPassword = "InvalidUsernameValidPassword"
 }
 
 export class LoginPageData {
@@ -11,8 +14,11 @@ export class LoginPageData {
 
 
     private static errorMessages: { [key: string]: string } = {
-        InvalidUsername : "Your username is invalid!",
-        InvalidPassword : "Your password is invalid!"
+        EmptyUsernameEmptyPassword : "Username is required",
+        EmptyUsernameValidPassword : "Username is required",
+        ValidUsernameEmptyPassword : "Password is required",
+        ValidUsernameInvalidPassword : "Username and password do not match any user in this service",
+        InvalidUsernameValidPassword : "Username and password do not match any user in this service"
     }
 
     public static getValidUsername = () => LoginPageData.validUsername;

@@ -1,4 +1,4 @@
-import { type Page, type Locator } from '@playwright/test';
+import { expect, type Page } from '@playwright/test';
 
 export default class ProductsInventoryPage {
     private readonly page: Page;
@@ -27,5 +27,9 @@ export default class ProductsInventoryPage {
 
     public async goToShoppingCart(){
         await this.shoppingCartIcon().click();
+    }
+
+    public async verifySuccessfulLogin(){
+        await expect(this.shoppingCartIcon()).toBeVisible();
     }
 }
