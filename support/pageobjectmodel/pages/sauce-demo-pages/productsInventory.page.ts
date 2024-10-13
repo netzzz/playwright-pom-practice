@@ -1,4 +1,4 @@
-import { expect, type Page } from '@playwright/test';
+import { expect, type Page, type Locator } from '@playwright/test';
 
 export default class ProductsInventoryPage {
     private readonly page: Page;
@@ -18,12 +18,32 @@ export default class ProductsInventoryPage {
 
     // Methods
 
-    public async addAllProductsToCart(){
-        let allProducts = await this.productDivs().all();
-        for(let product of allProducts){
+    public async getAllProducts(): Promise<Locator[]>{
+        return await this.productDivs().all();
+    }
+
+    // public async addAllProductsToCart(){
+    //     let allProducts = await this.getAllProducts();
+    //     for(let product of allProducts){
+    //         await product.getByText("Add to cart").click();
+    //     }
+    // }
+
+    public async getSpecifiedAmountOfProducts(numberOfProducts: number){
+        let allProducts = await this.getAllProducts();
+        let productsToAddToCart: Locator[] = [];
+        for(let i=0;i<numberOfProducts;i++){
+            productsToAddToCart.push(allProducts[i])
+        }
+        return productsToAddToCart;
+    }
+
+    public async addProductsToCart(products: Locator[]){
+        for(let product of products){
             await product.getByText("Add to cart").click();
         }
     }
+
 
     public async goToShoppingCart(){
         await this.shoppingCartIcon().click();

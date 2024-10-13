@@ -8,9 +8,9 @@ test('Login -> Purchase -> Checkout', async ({page, loginPage, productsInventory
     await loginPage.fillUsernameInput(LoginPageData.getValidUsername());
     await loginPage.fillPasswordInput(LoginPageData.getValidPassword());
     await loginPage.clickLoginButton();
-    await productsInventoryPage.addAllProductsToCart();
+    await productsInventoryPage.addProductsToCart(await productsInventoryPage.getAllProducts());
     await productsInventoryPage.goToShoppingCart();  
-    await cartPage.expectToHaveItemsInCart();
+    await cartPage.expectToHaveAnyItemsInCart();
     await cartPage.goToCheckout();
     await checkoutStepOnePage.fillFirstName(CheckoutPageData.getValidFirstName());
     await checkoutStepOnePage.fillLastName(CheckoutPageData.getValidLastName());
