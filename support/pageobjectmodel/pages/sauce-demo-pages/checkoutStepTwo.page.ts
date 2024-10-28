@@ -1,4 +1,4 @@
-import { type Page } from '@playwright/test';
+import { expect, type Page } from '@playwright/test';
 
 export default class CheckoutStepTwoPage {
     private readonly page: Page;
@@ -14,8 +14,13 @@ export default class CheckoutStepTwoPage {
     // Locators
 
     finishButton = () => this.page.getByText("Finish");
+    priceTotalLabel = () => this.page.getByText("Price Total");
 
     // Methods
+
+    public async expectToHavePriceTotalOnPage(){
+        await expect(this.priceTotalLabel()).toBeVisible();
+    }
 
     public async finishCheckout(){
         await this.finishButton().click();

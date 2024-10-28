@@ -2,7 +2,7 @@ import { test } from '../../fixtures/sauceDemoBasePage';
 import { LoginPageData } from '../../support/test-data/sauce-demo-test-data/loginPage.data';
 import { CheckoutPageData } from '../../support/test-data/sauce-demo-test-data/checkoutPage.data';
 
-test('Login -> Purchase -> Checkout', async ({page, loginPage, productsInventoryPage, 
+test('Login -> Purchase -> Checkout', async ({loginPage, productsInventoryPage, 
     cartPage, checkoutStepOnePage, checkoutStepTwoPage, checkoutCompletePage})=>{
     await loginPage.goto();
     await loginPage.fillUsernameInput(LoginPageData.getValidUsername());
