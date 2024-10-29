@@ -13,7 +13,7 @@ export default class DownloadPage {
 
     // Locators
 
-    downloadLink = () => this.page.getByText('Deadlock1.class');
+    downloadLink = () => this.page.getByText('Doc.pdf',{exact:true});
 
     // Methods
 
