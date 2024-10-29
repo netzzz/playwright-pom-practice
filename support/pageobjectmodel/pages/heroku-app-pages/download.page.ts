@@ -13,7 +13,7 @@ export default class DownloadPage {
 
     // Locators
 
-    downloadLink = () => this.page.getByText('Doc.pdf',{exact:true});
+    downloadLink = () => this.page.locator("div[class='example'] > a").first();
 
     // Methods
 

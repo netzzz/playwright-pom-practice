@@ -12,7 +12,6 @@ export class LoginPageData {
     private static invalidUsername: string = "invalidUser";
     private static invalidPassword: string = "invalidPassword";
 
-
     private static errorMessages: { [key: string]: string } = {
         EmptyUsernameEmptyPassword : "Username is required",
         EmptyUsernameValidPassword : "Username is required",
@@ -27,6 +26,6 @@ export class LoginPageData {
     public static getInvalidPassword = () => LoginPageData.invalidPassword;
 
     public static getErrorMessage(errorType : LoginErrorType): string{
-        return LoginPageData.errorMessages[errorType];
+        return this.errorMessages[errorType];
     }
 }

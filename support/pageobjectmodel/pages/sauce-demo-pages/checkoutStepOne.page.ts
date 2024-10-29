@@ -1,4 +1,5 @@
-import { type Page } from '@playwright/test';
+import { expect, type Page } from '@playwright/test';
+import { CheckoutErrorType, CheckoutPageData } from '../../../test-data/sauce-demo-test-data/checkoutPage.data';
 
 export default class CheckoutStepOnePage {
     private readonly page: Page;
@@ -17,6 +18,7 @@ export default class CheckoutStepOnePage {
     lastNameInput = () => this.page.getByPlaceholder("Last Name");
     postalCodeInput = () => this.page.getByPlaceholder("Zip/Postal Code");
     continueButton = () => this.page.getByText("Continue");
+    errorMessageDiv = () => this.page.locator("div[class*='error-message-container']");
 
     // Methods
 
@@ -34,5 +36,9 @@ export default class CheckoutStepOnePage {
 
     public async continueCheckout(){
         await this.continueButton().click();
+    }
+
+    public async expectToFindErrorMessage(errorMessage: CheckoutErrorType){
+        await expect(this.errorMessageDiv()).toContainText(CheckoutPageData.getErrorMessage(errorMessage));
     }
 }
