@@ -14,21 +14,21 @@ test.describe('login functionality test cases', () => {
         await cartPage.goToCheckout();
     })
 
-    test('checkout using empty name, valid last name and valid postal code', async ({page, checkoutStepOnePage, checkoutStepTwoPage}) => {
+    test('checkout using empty name, valid last name and valid postal code', async ({checkoutStepOnePage}) => {
         await checkoutStepOnePage.fillLastName(CheckoutPageData.getValidLastName());
         await checkoutStepOnePage.fillPostalCode(CheckoutPageData.getValidPostalCode());
         await checkoutStepOnePage.continueCheckout();
         await checkoutStepOnePage.expectToFindErrorMessage(CheckoutErrorType.EmptyFirstName);
     })
 
-    test('checkout using valid name, empty last name and valid postal code', async ({page, checkoutStepOnePage, checkoutStepTwoPage}) => {
+    test('checkout using valid name, empty last name and valid postal code', async ({checkoutStepOnePage}) => {
         await checkoutStepOnePage.fillFirstName(CheckoutPageData.getValidFirstName());
         await checkoutStepOnePage.fillPostalCode(CheckoutPageData.getValidPostalCode());
         await checkoutStepOnePage.continueCheckout();
         await checkoutStepOnePage.expectToFindErrorMessage(CheckoutErrorType.EmptyLastName);
     })
 
-    test('checkout using valid name, valid last name and empty postal code', async ({page, checkoutStepOnePage, checkoutStepTwoPage}) => {
+    test('checkout using valid name, valid last name and empty postal code', async ({checkoutStepOnePage}) => {
         await checkoutStepOnePage.fillFirstName(CheckoutPageData.getValidFirstName());
         await checkoutStepOnePage.fillLastName(CheckoutPageData.getValidPostalCode());
         await checkoutStepOnePage.continueCheckout();
