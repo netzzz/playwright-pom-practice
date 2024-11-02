@@ -9,7 +9,7 @@ test.describe('cart functionality test cases', () => {
         await loginPage.clickLoginButton();
     })
 
-    test('check adding/removing items to/from cart', async ({page,productsInventoryPage, cartPage}) => {
+    test('check adding/removing items to/from cart', async ({productsInventoryPage, cartPage}) => {
         await productsInventoryPage.addProductsToCart(await productsInventoryPage.getSpecifiedAmountOfProducts(2));
         await productsInventoryPage.goToShoppingCart();
         await cartPage.expectToHaveSpecifiedNumberOfItemsInCart(2);
